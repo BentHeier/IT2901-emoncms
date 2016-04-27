@@ -1,0 +1,4 @@
+sudo service mysql restart
+sudo /etc/init.d/lighttpd restart
+sudo redis-cli shutdown
+sudo redis-server

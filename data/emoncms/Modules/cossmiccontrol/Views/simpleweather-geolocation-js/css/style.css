@@ -1,0 +1,196 @@
+/*
+  Docs at http://http://simpleweatherjs.com
+
+  Look inspired by http://www.degreees.com/
+  Used for demo purposes.
+
+  Weather icon font from http://fonts.artill.de/collection/artill-weather-icons
+
+  DO NOT hotlink the assets/font included in this demo. If you wish to use the same font icon then download it to your local assets at the link above. If you use the links below odds are at some point they will be removed and your version will break.
+*/
+
+@font-face {
+    font-family: 'weatherFont';
+    src: url('font/artill_clean_icons-webfont.eot');
+    src: url('font/artill_clean_icons-webfont.woff') format('woff'),
+		url('font/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+		url('font/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg'),
+		url('font/artill_clean_icons-webfont.ttf') format('truetype');
+     
+    font-weight: normal;
+    font-style: normal;
+}
+
+.weatherclass {
+  margin: 0px 0px 3px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #1192d3;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.weatherclass  i {
+  color: #fff;
+  font-family: weatherFont;
+  font-size: 120px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  text-align: center;
+}
+
+.weatherclass2 {
+  margin: 0px 0px 3px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font: 10px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #1192d3;
+  height: 100%;
+  width: 19.5%;
+  display: inline-block;
+}
+
+.weatherclass2  i {
+  color: #fff;
+  font-family: weatherFont;
+  font-size: 100px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  text-align: center;
+}
+
+.icn-0:before { content: ":"; }
+.icn-1:before { content: "p"; }
+.icn-2:before { content: "S"; }
+.icn-3:before { content: "Q"; }
+.icn-4:before { content: "S"; }
+.icn-5:before { content: "W"; }
+.icn-6:before { content: "W"; }
+.icn-7:before { content: "W"; }
+.icn-8:before { content: "W"; }
+.icn-9:before { content: "I"; }
+.icn-10:before { content: "W"; }
+.icn-11:before { content: "I"; }
+.icn-12:before { content: "I"; }
+.icn-13:before { content: "I"; }
+.icn-14:before { content: "I"; }
+.icn-15:before { content: "W"; }
+.icn-16:before { content: "I"; }
+.icn-17:before { content: "W"; }
+.icn-18:before { content: "U"; }
+.icn-19:before { content: "Z"; }
+.icn-20:before { content: "Z"; }
+.icn-21:before { content: "Z"; }
+.icn-22:before { content: "Z"; }
+.icn-23:before { content: "Z"; }
+.icn-24:before { content: "E"; }
+.icn-25:before { content: "E"; }
+.icn-26:before { content: "3"; }
+.icn-27:before { content: "a"; }
+.icn-28:before { content: "A"; }
+.icn-29:before { content: "a"; }
+.icn-30:before { content: "A"; }
+.icn-31:before { content: "6"; }
+.icn-32:before { content: "1"; }
+.icn-33:before { content: "6"; }
+.icn-34:before { content: "1"; }
+.icn-35:before { content: "W"; }
+.icn-36:before { content: "1"; }
+.icn-37:before { content: "S"; }
+.icn-38:before { content: "S"; }
+.icn-39:before { content: "S"; }
+.icn-40:before { content: "M"; }
+.icn-41:before { content: "W"; }
+.icn-42:before { content: "I"; }
+.icn-43:before { content: "W"; }
+.icn-44:before { content: "a"; }
+.icn-45:before { content: "S"; }
+.icn-46:before { content: "U"; }
+.icn-47:before { content: "S"; }
+
+.weathertable{
+	display: none;
+}
+
+.weatherclass  h2 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.weatherclass h3 {
+	margin: 0 0 3px;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 250;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.weatherclass h4 {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 150;
+	text-align: center;
+}
+
+.weatherclass  ul {
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.weatherclass  li {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  padding: 3px;
+  margin: 3px 0 10px 0;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.weatherclass2  h2 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.weatherclass2 h3 {
+	margin: 0 0 3px;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 250;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.weatherclass2  ul {
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.weatherclass2  li {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  padding: 3px;
+  margin: 3px 0 10px 0;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.currently {
+  margin: 0 5px;
+}

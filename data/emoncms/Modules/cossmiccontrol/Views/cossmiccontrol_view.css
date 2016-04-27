@@ -1,0 +1,435 @@
+#tabs {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.largeFont{
+    font-size: large; 
+    width: 100%;
+    margin-top: 30px
+}
+
+.panel{
+    border: 1px solid #1192d3;
+    border-radius: 5px 5px 5px 5px;
+	margin-left: 28px;
+}
+
+.panel .panel-heading{
+    background: #fff;
+    border-bottom: 1px solid #1192d3;
+    font-size: 30px;
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    color: #1192d3;
+    padding: 10px 10px;
+}
+
+.panel .panel-body{
+
+    background: #1192d3;
+    text-align: left;
+    border-radius: 0 0 0 0 ;
+    color: #1192d3;
+    height: 270px;
+}
+
+.bcolor{
+	background-color: #1192d3;
+	color: #fff;
+}
+
+#currentLink{
+	text-decoration: underline;
+	font-weight: 900;
+}
+
+#neighbGraphPlaceholder{
+    width:100%;
+    height:400px;
+}
+
+.plot{
+    cursor: crosshair;
+}
+
+.helpIcon{
+	width: 20px;
+	height: 20px;
+}
+
+/*
+css for the weather box
+*/
+#weatherhead div{
+	display: inline-block;
+}
+
+#weatherHelp{
+	display: none;
+}
+
+/*
+css for the cossmic score box
+*/
+#treeHelp{
+    display: none;
+}
+
+#tree-panel{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#cossmictree{
+    margin-left: 100px;
+    width: auto;
+}
+
+#cossmictreeContainer{
+	float:left;
+    width: 100%;
+	height: 270px;
+    display: inline-block;
+}
+
+#treeImgContainer{
+    width: auto;
+    height: 100%;
+    float:left;
+}
+
+#cossmicforest{
+    float: right;
+}
+#cossmicforestContainer{
+    width: 49.8%;
+    height: 100%;
+    float:right;
+    display:none;
+}
+
+#cossmictreebarchart{
+    display: none;
+    height: 100%;
+    width: 60%;
+    margin-left: 30px;
+    float:left;
+}
+
+#cossmicforestbarchart{
+    height: 100%;
+    width: 50%;
+    float:left;
+}
+
+/*
+css for the my household box
+*/
+.houseboxsmall{
+    float:right; 
+    min-width: 570px;
+}
+
+.houseboxbig{
+    width: 1170px;
+}
+
+.elFlowHeaders{
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 36%;
+}
+
+.houseboxIconText{
+    color: #fff;
+    width: 40px; 
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.houseboxParagraph{
+    color: #fff;
+    display: inline-block;
+}
+
+.housebox_content{
+    width: 95px;
+    height: auto;
+    margin: 15% 140px 5% 30px;
+    float: left;
+}
+
+.elFlowStats{
+    padding-right: 45px;
+    width: 90px;
+    float:right;
+}
+
+.elFlowRow{
+    width: 50%;
+}
+
+#myHouseTag{
+    color: #fff;
+    float: left;
+}
+
+#myCommunityTag{
+    color: #fff;
+    margin-left: 160px;
+    float: right;
+}
+
+#elFlowTableAndIcons{
+    display: inline-block;
+    position: relative;
+}
+
+#elFlowText1{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 50%;
+    height: 150px;
+    float:left;
+    position: absolute;
+}
+
+#elFlowText1 tr td{
+    padding-top: 15px;
+    padding-right: 5px;
+    color: #ffffff;
+}
+
+#elFlowText2{
+    position: absolute;
+    margin-top: 58px;
+    margin-left: 63%;
+    width: 50%;
+    height: 150px;
+    float:right;
+}
+
+#elFlowText2 tr td{
+    padding-top: 20px;
+    padding-right: 15px;
+    color: #ffffff;
+}
+
+#houseInStats{
+    margin-top: 20px;
+    position: absolute;
+    color: #666;
+    height: 100%;
+}
+
+#elTotalConsumptionHeader{
+    position: absolute;
+    color: #1192d3;
+    margin: 17% 0 0 43%;
+}
+
+#elTotalConsumption{
+    position: absolute;
+    color: #1192d3;
+    margin: 21% 0 0 41%;
+}
+
+#housebox{
+    background-color: #1192d3;
+    display: inline-block;
+    float: right;
+}
+
+#houseIconBody{
+    float:left;
+    width: 50%;
+    height: 100%;
+    background-color: #1192d3;
+    display: none;
+}
+
+#housebody{
+    height: 270px;
+    width: 570px;
+    float: right;
+}
+#batterLabel{
+    display: none;
+}
+#house-icon{
+    margin-top: 8%;
+    margin-right: 10px;
+    float: right;
+    height:150px; 
+    width:80%;
+    display: none;
+}
+
+#houseboxTable{
+    margin-top: 13%;
+    margin-left: 10px;
+    color: #fff;
+}
+
+/*
+css for the scheduled tasks list box
+*/
+#summarySchedule{
+	display: none;
+}
+
+#taskTable tbody tr:hover{
+	background: #fff;
+	color: #1192d3;
+}
+
+/*
+css for the community graph
+*/
+.panel .panel-neighborhoodGraph{
+    border-radius: 0 0 0 0 ;
+    color: #1192d3;
+    background: #1192d3;
+}
+
+/*
+css for the appliances page
+*/
+
+#deviceList{
+	list-style-type: none;
+}
+
+/*
+css without any particular belongings, general to the site
+*/
+.expand{
+	float: right;
+	width: 20px;
+	height: 20px;
+}
+
+.whiteText{
+    color:#fff;
+}
+
+input[type=checkbox] {
+	margin: 7px;
+}
+
+#content {
+	width: 880px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.demo-container {
+	box-sizing: border-box;
+	width: 100%;
+	height: 450px;
+	padding: 20px 15px 15px 15px;
+	margin: 15px auto 30px auto;
+	background: #1192d3;
+	color: #fff;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+	-o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.demo-placeholder {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+.content table{
+	width: 100%;
+	border-color: #1192d3;
+}
+
+.ui-tabs{
+    border-width: 0px 0px 0px 0px;
+}
+
+.ui-tabs-nav {
+    background: transparent;
+    border-width: 0px 0px 1px 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0;
+}
+
+.ui-tabs .ui-widget-header {
+    border-width: 0px 0px 1px 0px;
+    background: none;
+}
+
+.ui-tabs .ui-widget-content {  
+    border-width: 0px 1px 1px 1px;
+    background: #1192d3;
+}
+
+.y-axis-label {
+    float:left;
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    border-style: none;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+    white-space:nowrap;
+}
+
+.placeholders {
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+
+.off-cell {
+	color: #BDBDBD;
+}
+table.legend {
+	table-layout: fixed;
+	width: 100%;
+}
+table.legend td {
+	width: 16.67%;
+	padding: 5px;
+}
+.legend-text {
+	margin-left: 5px;
+	float: left;
+	font-size: 85%;
+}
+
+#devicemenu {
+	width: 300px;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#now > div{
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 20px;
+}
+
+#today > div{
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 20px;
+}

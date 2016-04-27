@@ -1,0 +1,8 @@
+/* CSS Document */
+.icon-temperature{
+     background-image:url('./thermo-mini.png');
+     background-position: center center;
+     height: 14px;
+     line-height: 14px;
+     width: 14px;
+     }

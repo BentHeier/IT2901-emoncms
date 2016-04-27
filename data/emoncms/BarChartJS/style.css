@@ -1,0 +1,30 @@
+.bar {
+	fill: #1192d3;
+}
+
+.bar:hover{
+	fill: brown;
+}
+
+.axis{
+	font: 9px sans-serif;
+}
+
+.axis path, line{
+	fill: none;
+	stroke: #000;
+	shapeRendering: crispEdges;
+}
+
+.x.axis path{
+	display: none;
+}
+
+.x.axis .tick{
+	white-space: pre-wrap; /* CSS3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla after 1999 */
+	white-space: -webkit-pre-wrap; /* Newer Chrome / Safari */
+	word-wrap: break-word; /* IE 5.5+ */
+	word-break: break-all;
+	white-space: normal;
+}

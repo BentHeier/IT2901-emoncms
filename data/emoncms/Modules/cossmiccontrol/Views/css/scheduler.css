@@ -1,0 +1,49 @@
+.selected_device {
+	border: 1px solid #aaaaaa;
+	font-weight: normal;
+	color: #212121;
+}
+
+.pure-u > div {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.l-box {
+	padding: 0 0.5em;
+}
+
+.double{
+	display: inline-block;
+}
+
+.inputs{
+	padding-bottom: 2px;
+}
+
+#cdpanel{
+	background: #1192d3;
+	color: #fff;
+}
+
+a{
+	color: #fff;
+}
+
+#myConfigDeviceList{
+	list-style-type: none;
+}
+
+#configDeviceForm{
+	background: #1192d3;
+	color: #fff;
+}
+#configureForm{
+	padding: 5px 5px 5px 5px;
+}
+
+#settingMidPane{
+	display: none;
+	float: none;
+}

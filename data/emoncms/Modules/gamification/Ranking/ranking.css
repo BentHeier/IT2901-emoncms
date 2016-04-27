@@ -1,0 +1,177 @@
+
+html {
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**********************/
+/*   MAIN CONTAINER   */
+/**********************/
+
+#rankings {
+	margin-top: 50px;
+}
+
+.rankingContainer {
+	background: #1192d3;
+	color: #fff;
+}
+
+.rankingContainer h3 {
+	font-size: 15px;
+	padding: 2px 2px 2px 2px;
+	color: #fff;
+	margin: auto;
+}
+
+.panelContainer {
+	height: 700px;
+	overflow: auto;
+}
+
+
+
+/********************/
+/*   LEADERBOARDS   */
+/********************/
+
+
+/* Leaderboard Elements */
+
+.leaderboardElement {
+	height: 120px;
+	margin: 20px 20px;
+	padding: 0 20px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+	position: relative;
+}
+
+/*
+.leaderboardElement.dotdotdot {
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0.0);
+}
+*/
+
+.leaderboardElement.dotdotdot p {
+	text-align: center;
+	font-size: 8em;
+	font-family: "Georgia", sans-serif;
+	transform: translateY(-18px);
+}
+
+.leaderboardElement.currentUser {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Images */
+
+.imageContainer {
+	float: left;
+	height: 100px;
+	margin: 10px 0;
+}
+
+.leaderboardProfilePic {
+	border-radius: 50%;
+	height: 100px;
+}
+
+.leaderboardProfileRank {
+	height: 40px;
+	border-radius: 50%;
+	border: 3px solid #5bb12e;
+	transform: translate(-30px, 30px);
+}
+
+
+/* Text */
+
+.leaderboardName {
+	float: left;
+	line-height: 120px;
+	font-size: 2em;
+	margin-left: 0px;
+}
+
+.leaderboardScore {
+	float: right;
+	line-height: 120px;
+	font-size: 2em;
+	opacity: 0.6;
+}
+
+
+
+/* Buttons */
+
+.durationPicker {
+	margin: 40px auto 0px;
+	width: 400px;
+	height: 30px;
+	color: white;
+	font-size: 2em;
+}
+
+/*
+#leaderboardButtonContainer {
+	margin: 20px auto 10px;
+	justify-content: center;
+	display: flex;
+	width: 360px;
+	border-radius: 10px;
+}
+
+#leaderboardButtonContainer button {
+	background-color: white;
+	border: 1px solid #898989;
+	width: 120px;
+	height: 30px;
+	font-size: 1.2em;
+}
+
+#leaderboardButtonContainer .selected {
+	background-color: rgb(220, 220, 220);
+}
+*/
+
+
+
+/********************/
+/*   ACHIEVEMENTS   */
+/********************/
+
+#achievementsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 0;
+}
+
+.achievementElement {
+	width: 210px;
+	height: 200px;
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.achievementIcon {
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: 0 auto;
+}
+
+.achievementElement.notAchieved img {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}
+
+.achievementElement.notAchieved {
+	opacity: 0.4;
+}
