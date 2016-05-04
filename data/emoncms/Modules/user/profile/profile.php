@@ -145,21 +145,29 @@ $("#table").bind("onSave", function(e){
 
 $("#join-cossmunity-button").click(function() {
     var data = {
-        household_id : list.data.id,
+        household_id : 100, //list.data.id,
         username     : list.data.username,
         email_hash   : CryptoJS.MD5(list.data.gravatar).toString()
     };
     
     console.log(data);
     
-    $.post(
-        "http://178.79.153.226/php/setupHousehold.php", 
-        data, 
-        function(response) {
-            alert("Congratulations, you are now participating in Cossmunity!");
+    $.ajax("http://178.79.153.226/php/setupHousehold.php",  {
+        //contentType: "application/x-www-form-urlencoded",
+        data: data,
+        dataType: "json",
+        method: "POST",
+        type: "POST",
+        success: function(data) {
+            alert("Success");
+            console.log("Success");
         },
-        "jsonp"
-    );
+        error: function(wtf, status, error) {
+            console.log(wtf);
+            console.log(status);
+            console.log(error);
+        }
+    });
 })
 
 

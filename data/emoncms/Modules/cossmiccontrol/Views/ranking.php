@@ -47,7 +47,7 @@ global $path;
 	<div class="row">
 		<div class="panel rankingContainer" id="rank">
 			<div class="panel-heading">Rank</div>
-			<ul class="panelContainer"  id="pvprodList"></ul>
+			<div class="panelContainer" id="rankContainer"></div>
 		</div>
 	</div>
 <!--
