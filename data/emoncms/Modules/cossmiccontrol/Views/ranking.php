@@ -44,6 +44,13 @@ global $path;
 	<br />
 	<!-- Second row of ranking panels -->
 	<div class="row">
+		<div class="panel rankingContainer" id="rank">
+			<div class="panel-heading">Rank</div>
+			<ul class="panelContainer"  id="pvprodList"></ul>
+		</div>
+	</div>
+<!--
+	<div class="row">
 		<div class="panel span6 rankingContainer" id="rank">
 			<div class="panel-heading">Rank</div>
 			<ul class="panelContainer"  id="pvprodList"></ul>
@@ -53,4 +60,5 @@ global $path;
 			<ul class="panelContainer"  id="sharingList"></ul>
 		</div>
 	</div>
+-->
 </div>

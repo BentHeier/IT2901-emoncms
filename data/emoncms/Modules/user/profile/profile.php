@@ -92,6 +92,9 @@ function languagecodetotext()
         </div>
         </div>
         
+        <br>
+        <a id="join-cossmunity-button">Join Cossmunity</a>
+        
     </div>
 
     <div class="span8">
@@ -133,6 +136,33 @@ $("#table").bind("onSave", function(e){
 	// refresh the page if the language has been changed.
 	if (list.data.language!=currentlanguage) window.location.href = path+"user/view";
 });
+
+
+
+//------------------------------------------------------
+// Gamification
+//------------------------------------------------------
+
+$("#join-cossmunity-button").click(function() {
+    var data = {
+        household_id : list.data.id,
+        username     : list.data.username,
+        email_hash   : CryptoJS.MD5(list.data.gravatar).toString()
+    };
+    
+    console.log(data);
+    
+    $.post(
+        "http://178.79.153.226/php/setupHousehold.php", 
+        data, 
+        function(response) {
+            alert("Congratulations, you are now participating in Cossmunity!");
+        },
+        "jsonp"
+    );
+})
+
+
 
 //------------------------------------------------------
 // Username

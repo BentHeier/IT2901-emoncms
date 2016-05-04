@@ -24,9 +24,20 @@ html {
 	margin: auto;
 }
 
+/*
 .panelContainer {
 	height: 700px;
 	overflow: auto;
+}
+*/
+
+#leaderBoardContainer, #achievementsContainer {
+	height: 700px;
+	overflow: auto;
+}
+
+#rank {
+	height: 300px;
 }
 
 
