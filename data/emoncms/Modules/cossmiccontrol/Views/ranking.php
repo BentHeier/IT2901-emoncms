@@ -7,6 +7,7 @@ global $path;
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Lib/jqueryui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/cossmiccontrol/Views/cossmiccontrol_view.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/ranking.css">
+<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/rank_progress.css">
 
 <!-- Javascripts -->
 <script type="text/javascript" src="<?php echo $path; ?>Lib/jquery-1.9.0.min.js"></script>

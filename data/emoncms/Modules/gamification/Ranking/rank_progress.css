@@ -1,0 +1,16 @@
+.circle {
+    position: relative;
+    margin: 0 auto;
+    display: inline;
+    margin: 5px;
+}
+  
+.circle img {
+    vertical-align: top;
+    border-radius: 50%;
+    margin: 5px;
+}
+  
+.circle canvas {
+    position: absolute;
+}
