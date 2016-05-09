@@ -23,7 +23,7 @@ var dummyRanks = {
     ]
 };
 
-window.addEventListener("load", function () {
+$(document).ready( function() {
     popRanks(dummyRanks);
 });
 
@@ -33,15 +33,17 @@ function popRanks(ranks) {
         var div = document.createElement("div");
         div.id = "div_" + (i + 1);
         div.className = "circle";
-        div.width = 120;
-        div.height = 120;
+        /*div.width = $('#rankContainer').outerHeight()*0.5 + '';
+        div.height = $('#rankContainer').outerHeight()*0.5 + '';*/
+        div.width = 300*0.8+'';
+        div.height = 300*0.8+'';
         div.padding = 5;
-        $('#pvprodList').appendChild(svg);
+        $('#rankContainer').appendChild(div);
         if (i < 0) {
-            progressBar(div.width, 1, div.id, "finished/rank1.png");
+            progressBar(div.width, 1, div.id, path + "Modules/gamification/Artwork/Ranks/rank1.png");
         } else {
             var rank = rankList[i];
-            progressBar(div.width, rank.percent, div.id, "finished/rank" + rank.rank_id + ".png");
+            progressBar(div.width, rank.percent, div.id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
         }
     }
 }
@@ -52,14 +54,12 @@ function popRanks(ranks) {
 //  "div" - Id of the div container used
 //  "url" - location of the image file used in the center
 function progressBar(size, decimal, div, url) {
-    console.log("First thing: " + size + "," + decimal + "," + div + "," + url);
     //Failswitch for decimal value
     if (decimal > 1) {
         var decimal = 1;
     } else if (decimal < 0) {
         var decimal = 0;
     }
-    console.log('#' + div);
     $('#' + div).circleProgress({
         value: decimal,
         size: (size + 20),

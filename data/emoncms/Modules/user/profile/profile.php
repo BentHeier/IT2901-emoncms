@@ -152,9 +152,7 @@ $("#join-cossmunity-button").click(function() {
     
     console.log(data);
     
-    $.ajax("http://178.79.153.226/php/setupHousehold.php", 
-    {
-        //contentType: "application/x-www-form-urlencoded",
+    $.ajax("http://178.79.153.226/php/setupHousehold.php", {
         data: data,
         dataType: "json",
         method: "POST",
@@ -169,16 +167,6 @@ $("#join-cossmunity-button").click(function() {
             console.log(error);
         }
     });
-    
-//    $.post(
-//        "http://178.79.153.226/php/setupHousehold.php", 
-//        data, 
-//        function(response) {
-//            console.log(response);
-//            alert("Congratulations, you are now participating in Cossmunity!");
-//        },
-//        "json"
-//    );
 })
 
 
