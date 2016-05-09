@@ -36,3 +36,21 @@ table{
 	display: block;
 	height: 130px;
 }
+
+#widget-tip-heading {
+	text-decoration: underline;
+	padding: 20px 20px 0;
+	color: white;
+	font-size: 1.3em;
+}
+
+#widget-tip {
+	align-content: center;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	color: white;
+	font-size: 1.8em;
+	line-height: 1.3em;
+	padding: 10px 30px;
+}

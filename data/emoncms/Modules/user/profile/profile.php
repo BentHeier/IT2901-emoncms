@@ -17,8 +17,7 @@ defined('EMONCMS_EXEC') or die('Restricted access');
 
     $languages = get_available_languages();
 
-function languagecodetotext()
-{
+function languagecodetotext() {
     _('es_ES');
     _('fr_FR');
 }

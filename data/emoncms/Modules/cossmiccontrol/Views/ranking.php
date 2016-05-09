@@ -12,6 +12,8 @@ global $path;
 <!-- Javascripts -->
 <script type="text/javascript" src="<?php echo $path; ?>Lib/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Lib/jqueryui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo $path; ?>Lib/listjs/list.js"></script>
+<script type="text/javascript" src="<?php echo $path; ?>Modules/user/user.js"></script>
 
 <!-- Exposes the $path to the ranking js -->
 <script type="text/javascript"> var path = "<?php echo $path; ?>"; </script>
@@ -52,16 +54,4 @@ global $path;
 			<div class="panelContainer" id="rankContainer"></div>
 		</div>
 	</div>
-<!--
-	<div class="row">
-		<div class="panel span6 rankingContainer" id="rank">
-			<div class="panel-heading">Rank</div>
-			<ul class="panelContainer"  id="pvprodList"></ul>
-		</div>
-		<div class="panel span6 rankingContainer" id="misc">
-			<div class="panel-heading">Miscellaneous</div>
-			<ul class="panelContainer"  id="sharingList"></ul>
-		</div>
-	</div>
--->
 </div>

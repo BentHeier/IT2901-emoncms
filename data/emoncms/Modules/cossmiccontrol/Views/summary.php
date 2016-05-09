@@ -36,6 +36,9 @@ foreach($decomposedPath as &$value) {
 <script type="text/javascript" src="<?php echo $path; ?>Lib/flot/jquery.flot.time.min.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Lib/flot/jquery.flot.nagivate..min.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Lib/flot/jquery.flot.selection.js"></script>
+<script type="text/javascript" src="<?php echo $path; ?>Lib/listjs/list.js"></script>
+<script type="text/javascript" src="<?php echo $path; ?>Modules/user/user.js"></script>
+
 <!-- The json parsing javascript -->
 <script type="text/javascript" src="<?php echo $path; ?>Modules/cossmiccontrol/Views/json.js"></script>
 <!-- Libraries used for the weather widget -->
@@ -77,7 +80,7 @@ foreach($decomposedPath as &$value) {
 		<!-- Div containing the CoSSMic tree / forest -->
 		<div id="treebox" class="panel span4" >
 
-			<div class="panel-heading">Group 6
+			<div class="panel-heading">Cossmunity
                 <img class="helpIcon" id="treeHelp"   src="<?php echo $path; ?>images/help-icon.png"/>
                 <img class="expand"   id="treeexpand" src="<?php echo $path; ?>images/pluss-icon.png" /></div>
 			<div class="panel-body">
@@ -86,10 +89,14 @@ foreach($decomposedPath as &$value) {
                         <div id="gamificationWidget"></div>
                     </div>
                     <div id="cossmicforestContainer">
+	                    <p id="widget-tip-heading">Tip of the day</p>
+	                    <p id="widget-tip"></p>
+<!--
                         <img id="cossmicforest" src="<?php echo $path; ?>images/tree/forest-test2.png" alt="" style="height:270px; width:auto">
                         <div id="cossmicforestbarchart" class="tree-barchart">
 							<svg class="outerChart" id="outerForestChart"></svg>
                         </div>
+-->
                     </div>
 				</div>
 			</div>

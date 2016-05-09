@@ -23,8 +23,14 @@ var dummyRanks = {
     ]
 };
 
+/*
 $(document).ready( function() {
     popRanks(dummyRanks);
+});
+*/
+
+window.addEventListener("load", function() {
+	popRanks(dummyRanks);
 });
 
 function popRanks(ranks) {
@@ -32,11 +38,14 @@ function popRanks(ranks) {
     for (var i = -1; i < rankList.length; i++) {
         var div = document.createElement("div");
         div.id = "div_" + (i + 1);
-        div.className = "circle";
+        div.className = "circle rank-image";
         /*div.width = $('#rankContainer').outerHeight()*0.5 + '';
         div.height = $('#rankContainer').outerHeight()*0.5 + '';*/
-        div.width = 300*0.8+'';
-        div.height = 300*0.8+'';
+
+		var boxSize = 300;
+		var scale = 0.55;
+
+		div.width = boxSize * scale + '';
         div.padding = 5;
         $('#rankContainer').appendChild(div);
         if (i < 0) {
