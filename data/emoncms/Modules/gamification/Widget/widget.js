@@ -39,7 +39,7 @@ function fetchTip() {
 		dataType: "jsonp",
 		success: function(data, textStatus, jqXHR) {
 			console.log(data);
-			$("#widget-tip").html(tip);
+			$("#widget-tip").html(data["tip"]);
 		}
 	});
 

@@ -23,15 +23,15 @@ var dummyRanks = {
     ]
 };
 
-/*
 $(document).ready( function() {
     popRanks(dummyRanks);
 });
-*/
 
+/*
 window.addEventListener("load", function() {
 	popRanks(dummyRanks);
 });
+*/
 
 function popRanks(ranks) {
     var rankList = ranks["ranks"];
@@ -43,16 +43,19 @@ function popRanks(ranks) {
         div.height = $('#rankContainer').outerHeight()*0.5 + '';*/
 
 		var boxSize = 300;
-		var scale = 0.55;
+		var scale = 0.45;
 
 		div.width = boxSize * scale + '';
+		div.height = 150;
         div.padding = 5;
-        $('#rankContainer').appendChild(div);
+        
+        $('#rankContainer').append(div);
+        
         if (i < 0) {
-            progressBar(div.width, 1, div.id, path + "Modules/gamification/Artwork/Ranks/rank1.png");
+            progressBar(boxSize * scale, 1, div.id, path + "Modules/gamification/Artwork/Ranks/rank1.png");
         } else {
             var rank = rankList[i];
-            progressBar(div.width, rank.percent, div.id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
+            progressBar(boxSize * scale, rank.percent, div.id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
         }
     }
 }
