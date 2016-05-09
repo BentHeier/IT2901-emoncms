@@ -126,28 +126,6 @@ html {
 	font-size: 2em;
 }
 
-/*
-#leaderboardButtonContainer {
-	margin: 20px auto 10px;
-	justify-content: center;
-	display: flex;
-	width: 360px;
-	border-radius: 10px;
-}
-
-#leaderboardButtonContainer button {
-	background-color: white;
-	border: 1px solid #898989;
-	width: 120px;
-	height: 30px;
-	font-size: 1.2em;
-}
-
-#leaderboardButtonContainer .selected {
-	background-color: rgb(220, 220, 220);
-}
-*/
-
 
 
 /********************/
@@ -185,4 +163,22 @@ html {
 
 .achievementElement.notAchieved {
 	opacity: 0.4;
+}
+
+
+
+
+/************/
+/*   RANK   */
+/************/
+
+#rankContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 41px);
+}
+
+.rank-image {
+	margin: 0 7px;
 }

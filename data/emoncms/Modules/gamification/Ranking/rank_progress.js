@@ -23,15 +23,22 @@ var dummyRanks = {
     ]
 };
 
+/*
 $(document).ready( function() {
     popRanks(dummyRanks);
+});
+*/
+
+window.addEventListener("load", function() {
+	popRanks(dummyRanks);
 });
 
 function popRanks(ranks) {
     var rankList = ranks["ranks"];
     for (var i = -1; i < rankList.length; i++) {
         var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.id = "svg_"+i;
+        svg.id = "svg_" + i;
+        svg.setAttribute("class", "rank-image");
 /*
         svg.style.width = $('#rankContainer').outerHeight()*0.8 + '';
         svg.style.height = $('#rankContainer').outerHeight()*0.8 + '';
@@ -42,16 +49,19 @@ function popRanks(ranks) {
             progressBar(svg.clientWidth, rank.percent, svg, rank.rank_id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
         }
 */
+		var boxSize = 300;
+		var scale = 0.55;
 
-		svg.style.width = 300*0.8 + '';
-        svg.style.height = 300*0.8 + '';
+		svg.style.width = boxSize * scale + '';
+        svg.style.height = boxSize * scale + '';
 
         if (i < 0) {
-            progressBar(300*0.8, 1, svg, 1, path + "Modules/gamification/Artwork/Ranks/rank"+1+".png");
+            progressBar(boxSize * scale, 1, svg, 1, path + "Modules/gamification/Artwork/Ranks/rank"+1+".png");
         } else {
             var rank = rankList[i];
-            progressBar(300*0.8, rank.percent, svg, rank.rank_id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
+            progressBar(boxSize * scale, rank.percent, svg, rank.rank_id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
         }
+
         $('#rankContainer').append(svg);
     }
 }
@@ -63,11 +73,13 @@ function popRanks(ranks) {
 //  "level" - Number in image path (may be changed)
 //  "url" - location of the image file used in the center
 function progressBar(size, decimal, svg, level, url) {
+/*
 	console.log(size);
 	console.log(decimal);
 	console.log(svg);
 	console.log(level);
 	console.log(url);
+*/
     //Failswitch for decimal value
     if (decimal > 1) {
         var decimal = 1;
