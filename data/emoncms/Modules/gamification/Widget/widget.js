@@ -3,65 +3,9 @@ window.addEventListener("load", function () {
 	
 	addWidget();
 	setValues3();
+	addLeaderboard();
 	fetchTip();
 });
-
-function fetchTip() {
-/*
-	var tips = [
-		"Heating or cooling the whole house can be expensive. Where possible, shut doors to areas you are not using and only heat or cool the rooms you spend the most time in.", 
-		"In winter, heating can account for over 30% of your bill. Set your thermostat between 18 and 20 degrees. Every degree above 20 can add 10% to your heating bill. In summer, set your thermostat to 26 degrees or above.",
-		"Turn off when you leave the room, or go to bed. With some ducted heating systems you can turn off the heating in the rooms that are unoccupied. Make sure all your heating or cooling is turned off when you leave the house.",
-		"You can save around $115 per year by washing clothes in cold water. You can also save by making sure you select the shortest appropriate washing cycle and waiting until you have a full load.",
-		"Your fridge is always on, making it one of your most expensive appliances. Make sure the door seal is tight and free from gaps so cold air can't escape.",
-		"Did you know your phone charger is still using energy even when your phone is not attached? Up to 10% of your electricity could be used by gadgets and appliances that are on standby.",
-		"Replace old incandescent and halogen light globes with energy-efficient globes. Energy-efficient globes save power and last longer. Light globes can sometimes be replaced for free or at reduced cost.",
-		"When you are cooking, use the microwave when you can – it uses much less energy than an electric oven. If you use the stove, keep lids on your pots to reduce cooking time."
-	];
-	var tip = tips[Math.floor(Math.random() * tips.length)];
-*/
-	
-	var url = "http://178.79.153.226/php/retrieveTip.php?callback=?&household_id=" + list.data.id;
-	
-/*
-	$.ajax({
-		type: "GET",
-		url: url,
-		contentType: 'text/plain',
-		success: tipCallback
-	});
-*/
-	
-	$.ajax({
-		type: "GET",
-		url: url,
-		contentType: 'application/json',
-		dataType: "jsonp",
-		success: function(data, textStatus, jqXHR) {
-			console.log(data);
-			$("#widget-tip").html(data["tip"]);
-		}
-	});
-
-/*
-	$.ajax({
-		type: "GET",
-		url: url,
-		contentType: 'text/plain',
-		success: function(data, textStatus, jqXHR){
-			console.log(data);
-			addLeaderboardData(data["data"]);
-		}
-	});
-*/
-	
-	
-}
-
-function tipCallback(tip) {
-	console.log(tip);
-	$("#widget-tip").html(tip);
-}
 
 function addWidget() {
 	var widget = document.getElementById("gamificationWidget");
@@ -91,48 +35,6 @@ function addWidget() {
 	line.appendChild(sinLine);
 	contentContainer.appendChild(line);
 
-	//-----------------Ranking-------------------
-	var multiContent = document.createElement("div");
-	multiContent.id = "MC";
-
-	var table = document.createElement("table");
-	table.id = "table";
-
-	var row, col;
-
-	//Make the arrays for dummy-table
-	var array1 = ["17.", "Normann", "3672"];
-	var array2 = ["18.", "Johnsen", "1278"];
-	var array3 = ["19.", "Smith", "1254"];
-	var mainArray = [array1, array2, array3];
-
-	//Function to populate the table
-	for (i = 0; i < mainArray.length; i++) {
-		row = document.createElement("tr");
-		for (j = 0; j < mainArray[i].length; j++) {
-			col = document.createElement("td");
-			if (i == 1) {
-				col.innerHTML = mainArray[i][j].bold().big();
-			} else {
-				col.innerHTML = mainArray[i][j];
-			}
-			if (j == 1) {
-				col.style.textAlign = "left";
-				col.style.width = "50%";
-			} else if (j == 0) {
-				col.style.textAlign = "center";
-				col.style.width = "20%";
-			} else {
-				col.style.textAlign = "center";
-				col.style.width = "30%";
-			}
-			row.appendChild(col);
-		}
-		table.appendChild(row);
-	}
-	multiContent.appendChild(table);
-	contentContainer.appendChild(multiContent);
-
 	widget.appendChild(contentContainer);
 }
 
@@ -154,8 +56,114 @@ function setValues3() {
 	document.getElementById("Aline").setAttribute("y1", "0");
 	document.getElementById("Aline").setAttribute("x2", "98%");
 	document.getElementById("Aline").setAttribute("y2", "0");
-
-	//-----------------Ranking-------------------
-	document.getElementById("MC").style.width = "100%";
-	document.getElementById("MC").style.height = "45%";
 }
+
+
+
+
+/**********************/
+/*   TIP OF THE DAY   */
+/**********************/
+
+function fetchTip() {
+	var url = "http://178.79.153.226/php/retrieveTip.php?callback=?&household_id=" + list.data.id;
+	
+	$.ajax({
+		type: "GET",
+		url: url,
+		contentType: 'application/json',
+		dataType: "jsonp",
+		success: function(data, textStatus, jqXHR) {
+			$("#widget-tip").html(data["tip"]);
+		}
+	});	
+}
+
+
+
+
+/***************************/
+/*   WIDGET LEADERBOARDS   */
+/***************************/
+
+// Fetches the data and calls insertLeaderboardData
+function addLeaderboard() {
+	var endDate = new Date();
+	var startDate = new Date();
+	startDate.setDate(startDate.getDate() - 30);
+		
+	// Dates are in the format yyyy-mm-dd
+	var endString   =   endDate.getFullYear() + "-" + ("0" + (  endDate.getMonth() + 1)).slice(-2) + "-" + ("0" +   endDate.getDate()).slice(-2);
+	var startString = startDate.getFullYear() + "-" + ("0" + (startDate.getMonth() + 1)).slice(-2) + "-" + ("0" + startDate.getDate()).slice(-2);
+	var url = "http://178.79.153.226/php/retrieveLeaderboards.php?callback=?&household_id=" + list.data.id + "&leaderboard_mode=timed&start_date=" + startString + "&end_date=" + endString;
+
+	$.ajax({
+		type: "GET",
+		url: url,
+		contentType: 'application/json',
+		dataType: 'jsonp',
+		success: function(data, textStatus, jqXHR){
+			insertLeaderboardData(data["data"]);
+		}
+	});
+}
+
+// Inserts a row with leaderboard data to the given table
+function insertRow(table, isCurrentUser, position, name, score) {
+	var row         = document.createElement("tr");
+	var positionCol = document.createElement("td");
+	var nameCol     = document.createElement("td");
+	var scoreCol    = document.createElement("td");
+	
+	positionCol.innerHTML = position + ".";
+	nameCol.innerHTML = name;
+	scoreCol.innerHTML = numberWithThousandsSeparator(score);
+	
+	if (isCurrentUser) {
+		positionCol.innerHTML = (position + ".").bold().big();
+		nameCol.innerHTML = name.bold().big();
+		scoreCol.innerHTML = numberWithThousandsSeparator(score).bold().big();
+	}
+	
+	row.appendChild(positionCol);
+	row.appendChild(nameCol);
+	row.appendChild(scoreCol);
+	
+	table.appendChild(row);
+}
+
+// Takes an int, and returns the number as a string with a space to separate thousands
+function numberWithThousandsSeparator(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+// Creates a table and adds it to the ContentContainer div
+function insertLeaderboardData(json) {
+	console.log(json);
+	var currentUserIndex = json["currentHouseholdIndex"];
+	var leaderboardJSON = json["leaderboard"];
+	
+	var leaderboardDiv = document.createElement("div");
+	leaderboardDiv.id = "widget-leaderboard";
+	
+	var leaderboardTable = document.createElement("table");
+	
+	var userData = leaderboardJSON[currentUserIndex];
+	
+	if (currentUserIndex > 0) {
+		var aboveData = leaderboardJSON[currentUserIndex - 1];
+		insertRow(leaderboardTable, false, currentUserIndex , aboveData.username, aboveData.score);
+	}
+	
+	insertRow(leaderboardTable, true, currentUserIndex + 1, userData.username, userData.score);
+	
+	if (currentUserIndex < leaderboardJSON.length - 1) {
+		var belowData = leaderboardJSON[currentUserIndex + 1];
+		insertRow(leaderboardTable, false, currentUserIndex + 2, belowData.username, belowData.score);
+	}
+	
+	leaderboardDiv.appendChild(leaderboardTable);
+	document.getElementById("ContentContainer").appendChild(leaderboardDiv);
+}
+
+
