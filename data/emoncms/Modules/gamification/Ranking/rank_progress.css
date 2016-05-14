@@ -14,3 +14,8 @@
 .circle canvas {
     position: absolute;
 }
+
+.unfinished {
+    filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}

@@ -14,12 +14,17 @@ function addWidget() {
 	var contentContainer = document.createElement("div");
 	contentContainer.id = "ContentContainer";
 
-	//-----------------Single content-------------------
-	var rankImage = document.createElement("img");
+    //-----------------Single content-------------------
+    /*
+    var rankImage = document.createElement("img");
 	rankImage.src = "http://178.79.153.226/images/rankImage.php";
 	rankImage.alt = "Rank Image";
 	rankImage.id = "rankImage";
 	contentContainer.appendChild(rankImage);
+    */
+
+    //Placeholder data until i can get the real data
+	progressBar(0.1719,3);
 
 	//-----------------Line between content-------------------
 	var line = document.createElement("div");
@@ -56,6 +61,48 @@ function setValues3() {
 	document.getElementById("Aline").setAttribute("y1", "0");
 	document.getElementById("Aline").setAttribute("x2", "98%");
 	document.getElementById("Aline").setAttribute("y2", "0");
+}
+
+
+/*******************/
+/*   WIDGET RANK   */
+/*******************/
+
+function progressBar(decimal, rank_id) {
+
+    //Using the size from previous image
+    var size = 110;
+
+    //Not sure if this is working
+    var url = path + "Modules/gamification/Artwork/Ranks/rank" + rank_id + ".png"
+
+    var rank_content = document.createElement("div");
+    rank_content.id = "widget-rank";
+
+    $('#widget-rank').circleProgress({
+        value: decimal,
+        size: (size + 20),
+        startAngle: 1.5 * Math.PI,
+        animation: false,
+        emptyFill: "#bebebe",
+        fill: {
+            color: "#58B31F"
+        }
+    });
+
+    var img = document.createElement('IMG');
+    img.src = url;
+    img.width = (size + 10);
+    img.height = (size + 10);
+
+
+    rank_content.append(img);
+
+    document.getElementById("ContentContainer").appendChild(rank_content);
+
+    /*
+    $('#ContentContainer').append(rank_content);
+    */
 }
 
 

@@ -55,6 +55,12 @@ function popRanks(ranks) {
             progressBar(boxSize * scale, 1, div.id, path + "Modules/gamification/Artwork/Ranks/rank1.png");
         } else {
             var rank = rankList[i];
+            if (rank.percent < 0) {
+                div.className += " unfinished";
+            } else if (rank.percent > 0 && rank.percent < 1) {
+                div.width += 50;
+                div.height += 50;
+            }
             progressBar(boxSize * scale, rank.percent, div.id, path + "Modules/gamification/Artwork/Ranks/rank" + rank.rank_id + ".png");
         }
     }
