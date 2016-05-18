@@ -1,37 +1,23 @@
-var dummyRanks = {
-    "ranks": [
-		{
-		    "percent": "2.3438",
-		    "rank_id": "2",
-		},
-		{
-		    "percent": "1.3438",
-		    "rank_id": "3",
-		},
-        {
-            "percent": "0.1719",
-            "rank_id": "4",
-        },
-        {
-            "percent": "-0.8281",
-            "rank_id": "5",
-        },
-        {
-            "percent": "-1.2188",
-            "rank_id": "6",
-        }
-    ]
-};
 
 $(document).ready( function() {
-    popRanks(dummyRanks);
+	list.data = user.get();
+	fetchRanks()
 });
 
-/*
-window.addEventListener("load", function() {
-	popRanks(dummyRanks);
-});
-*/
+
+function fetchRanks() {
+	var url = "http://178.79.153.226/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id ;
+	
+	$.ajax({
+		type: "GET",
+		url: url,
+		contentType: 'application/json',
+		dataType: 'jsonp',
+		success: function(data, textStatus, jqXHR){
+			popRanks(data);
+		}
+	});
+}
 
 function popRanks(ranks) {
     var rankList = ranks["ranks"];
