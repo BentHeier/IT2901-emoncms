@@ -23,9 +23,25 @@ function addWidget() {
 	contentContainer.appendChild(rankImage);
     */
 
-    //Placeholder data until i can get the real data
-	progressBar(0.1719,3);
+	widget.appendChild(contentContainer);
+	
+	//Placeholder data until i can get the real data
+	var url = "http://178.79.153.226/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id;
 
+	$.ajax({
+		type: "GET",
+		url: url,
+		contentType: 'application/json',
+		dataType: 'jsonp',
+		success: function(data, textStatus, jqXHR){
+			console.log("RANKS!");
+			console.log(data);
+			progressBar(0.1719,3);
+		}
+	});
+// 	progressBar(0.1719,3);
+	
+	
 	//-----------------Line between content-------------------
 	var line = document.createElement("div");
 	line.id = "line";
@@ -39,8 +55,6 @@ function addWidget() {
 	sinLine.appendChild(actLine);
 	line.appendChild(sinLine);
 	contentContainer.appendChild(line);
-
-	widget.appendChild(contentContainer);
 }
 
 function setValues3() {
@@ -79,6 +93,8 @@ function progressBar(decimal, rank_id) {
     var rank_content = document.createElement("div");
     rank_content.id = "widget-rank";
 
+	document.getElementById("ContentContainer").appendChild(rank_content);
+
     $('#widget-rank').circleProgress({
         value: decimal,
         size: (size + 20),
@@ -95,14 +111,9 @@ function progressBar(decimal, rank_id) {
     img.width = (size + 10);
     img.height = (size + 10);
 
+//     rank_content.appendChild(img);
 
-    rank_content.append(img);
-
-    document.getElementById("ContentContainer").appendChild(rank_content);
-
-    /*
-    $('#ContentContainer').append(rank_content);
-    */
+    document.getElementById("widget-rank").appendChild(img);
 }
 
 
