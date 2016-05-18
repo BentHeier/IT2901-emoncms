@@ -7,5 +7,5 @@
 
 	//All users should have quick menu access to the Ranking page.
 	
-	$menu_left[] = array('name'=> dgettext($domain, "Ranking"), 'path'=>"cossmiccontrol/view/ranking" , 'session'=>"write", 'order' => 13 );
+	$menu_left[] = array('name'=> dgettext($domain, "CoSSMunity"), 'path'=>"cossmiccontrol/view/ranking" , 'session'=>"write", 'order' => 13 );
 ?>
