@@ -2,9 +2,7 @@ window.addEventListener("load", function () {
 	list.data = user.get();
 	
 	addWidget();
-	setValues3();
-	addLeaderboard();
-	fetchTip();
+	addDailyTip();
 });
 
 function addWidget() {
@@ -13,19 +11,8 @@ function addWidget() {
 	//-----------------Start of content-------------------
 	var contentContainer = document.createElement("div");
 	contentContainer.id = "ContentContainer";
-
-    //-----------------Single content-------------------
-    /*
-    var rankImage = document.createElement("img");
-	rankImage.src = "http://178.79.153.226/images/rankImage.php";
-	rankImage.alt = "Rank Image";
-	rankImage.id = "rankImage";
-	contentContainer.appendChild(rankImage);
-    */
-
 	widget.appendChild(contentContainer);
 	
-	//Placeholder data until i can get the real data
 	var url = "http://178.79.153.226/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id;
 
 	$.ajax({
@@ -33,16 +20,23 @@ function addWidget() {
 		url: url,
 		contentType: 'application/json',
 		dataType: 'jsonp',
-		success: function(data, textStatus, jqXHR){
-			console.log("RANKS!");
-			console.log(data);
-			progressBar(0.1719,3);
+		success: function(data, textStatus, jqXHR){			
+			for (var i = 0; i < data.ranks.length; i++) {
+				var rank = data.ranks[i];
+				if (rank.percent >= 0.0 && rank.percent <= 1.0) {
+					progressBar(rank.percent, rank.rank_id);
+					break;
+				}
+			}
+			
+			addSeparatorLine();
+			setValues3();
+			addLeaderboard();
 		}
-	});
-// 	progressBar(0.1719,3);
-	
-	
-	//-----------------Line between content-------------------
+	});	
+}
+
+function addSeparatorLine() {
 	var line = document.createElement("div");
 	line.id = "line";
 
@@ -54,7 +48,7 @@ function addWidget() {
 
 	sinLine.appendChild(actLine);
 	line.appendChild(sinLine);
-	contentContainer.appendChild(line);
+	document.getElementById("ContentContainer").appendChild(line);
 }
 
 function setValues3() {
@@ -111,8 +105,6 @@ function progressBar(decimal, rank_id) {
     img.width = (size + 10);
     img.height = (size + 10);
 
-//     rank_content.appendChild(img);
-
     document.getElementById("widget-rank").appendChild(img);
 }
 
@@ -123,7 +115,7 @@ function progressBar(decimal, rank_id) {
 /*   TIP OF THE DAY   */
 /**********************/
 
-function fetchTip() {
+function addDailyTip() {
 	var url = "http://178.79.153.226/php/retrieveTip.php?callback=?&household_id=" + list.data.id;
 	
 	$.ajax({

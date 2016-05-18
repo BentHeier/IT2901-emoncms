@@ -2,11 +2,11 @@
 //When document is ready, populate the lists
 $(document).ready( function() {
 	list.data = user.get();
-	console.log(list.data);
 	
 	addAchievements();
 	refreshLeaderboard();
 	highlightPageLink();
+	setTooltips();
 });
 
 //function to find what page we are on and add the currentLink id to that navbar link to highlight current page
@@ -45,14 +45,13 @@ function addAchievements() {
 		dataType: 'jsonp',
 		success: function(data, textStatus, jqXHR){
 			var achievementsList = data["data"];
-			console.log(achievementsList);
 			
 			for (var i = 0; i < achievementsList.length; i++) {
 				var achievement = achievementsList[i];
 				var achieved = achievement.achieved == "1" ? 'achieved' : 'notAchieved';
 				
 				var element = '<div class="achievementElement ' + achieved + '" style="background-color: rgba(255, 255, 255, 0.2);">';
-				element += '<img src="' + path + "Modules/gamification/Artwork/Achievements/achievement" + (parseInt(achievement.achievement_id) + 1) + ".png" + '" class="achievementIcon">';
+				element += '<img src="' + path + "Modules/gamification/Artwork/Achievements/achievement" + (parseInt(achievement.achievement_id) + 1) + ".jpg" + '" class="achievementIcon">';
 				element += '<h4>' + achievement.achievement_name + '</h4>';
 				element += '<p>' + achievement.description + '</p>';
 				element += '</div>';
@@ -135,3 +134,57 @@ function refreshLeaderboard() {
 		}
 	});
 }
+
+
+
+/****************/
+/*   TOOLTIPS   */
+/****************/
+
+
+function setTooltips() {
+
+        $("#leaderboardHelp").data("powertip", function(){
+
+                var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
+                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+                "<br>enough to think they can change the world, are the ones who do.";
+
+                    return tooltip;
+                });
+        $("#achievementsHelp").data("powertip", function(){
+            var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
+                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+                "<br>enough to think they can change the world, are the ones who do."
+
+            return tooltip;
+        });
+
+		$("#rankHelp").data("powertip", function(){
+			var tooltip = "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
+                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+                "<br>enough to think they can change the world, are the ones who do."
+			return tooltip;
+		});
+
+        $("#leaderboardHelp").powerTip({
+            placement: "se",
+            mouseOnToPopup:true
+        });
+
+        $("#achievementsHelp").powerTip({
+            placement: "se",
+            mouseOnToPopup: true
+        });
+
+		$("#rankHelp").powerTip({
+			placement: "se",
+			mouseOnToPopup: true
+		});
+    }
