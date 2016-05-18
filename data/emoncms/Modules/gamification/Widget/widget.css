@@ -36,6 +36,8 @@
 }
 
 
+
+
 /*******************/
 /*   WIDGET RANK   */
 /*******************/
@@ -44,7 +46,8 @@
     position: relative;
     margin: 0 auto;
     display: block;
-    margin: 5px;
+    margin-top: 10px;
+    left: calc(50% - 65px);
 }
   
 #widget-rank img {
