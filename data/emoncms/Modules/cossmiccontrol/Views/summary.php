@@ -1111,14 +1111,16 @@ $(document).ready( function () {
     getMidnightData();
 	//Check first with geolocation to find users position. If that fails, second function is called to handle errors.
 	//If geolocation fails, use the location field in users profile on emoncms.
-    navigator.geolocation.getCurrentPosition(function(position) {
-	console.log("Found users position with geolocation. Fetching weather data");
-    //loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
-    errorWeather("<?php echo $userlocation; ?>");
-}, function(position){
-	console.log("Geolocation failed, attempting to use location from the user data in emoncms");
-	errorWeather("<?php echo $userlocation; ?>");
-}, {timeout: 10000});
+    navigator.geolocation.getCurrentPosition(
+		function(position) {
+			console.log("Found users position with geolocation. Fetching weather data");
+		    //loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
+		    errorWeather("<?php echo $userlocation; ?>");
+		}, function(position){
+			console.log("Geolocation failed, attempting to use location from the user data in emoncms");
+			errorWeather("<?php echo $userlocation; ?>");
+		}, {timeout: 10000}
+	);
 
     setHiddenContent();
 	summarySetup();
