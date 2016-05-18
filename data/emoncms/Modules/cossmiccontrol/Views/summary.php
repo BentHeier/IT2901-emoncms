@@ -81,7 +81,7 @@ foreach($decomposedPath as &$value) {
 		<!-- Div containing the CoSSMic tree / forest -->
 		<div id="treebox" class="panel span4" >
 
-			<div class="panel-heading">Cossmunity
+			<div class="panel-heading">CoSSMunity
                 <img class="helpIcon" id="treeHelp"   src="<?php echo $path; ?>images/help-icon.png"/>
                 <img class="expand"   id="treeexpand" src="<?php echo $path; ?>images/pluss-icon.png" /></div>
 			<div class="panel-body">
