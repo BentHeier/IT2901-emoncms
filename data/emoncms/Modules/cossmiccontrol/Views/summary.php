@@ -56,7 +56,7 @@ foreach($decomposedPath as &$value) {
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Widget/widget.css">
 <script type="text/javascript" src="<?php echo $path ?>Modules/gamification/gamification-config.js" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $path ?>Modules/gamification/Widget/widget.js" charset="utf-8"></script>
-<script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Widget/circle-progress.js"></script>
+<script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Third-party/circle-progress.js"></script>
 
 <!-- Enclosing div for the top main page content -->
 <div id="today">
