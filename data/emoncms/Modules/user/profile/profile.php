@@ -27,6 +27,7 @@ function languagecodetotext() {
 <script type="text/javascript" src="<?php echo $path; ?>Modules/user/profile/md5.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/user/user.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Lib/listjs/list.js"></script>
+<script type="text/javascript" src="<?php echo $path ?>Modules/gamification/gamification-config.js" charset="utf-8"></script>
 
 <div class="row">
 
@@ -151,8 +152,8 @@ $("#join-cossmunity-button").click(function() {
     };
     
     console.log(data);
-    
-    $.ajax("http://178.79.153.226/php/setupHousehold.php", {
+	
+    $.ajax("http://" + gamificationServerIP + "/php/setupHousehold.php", {
         data: data,
         dataType: "json",
         method: "POST",

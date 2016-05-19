@@ -19,6 +19,7 @@ global $path;
 
 <!-- Exposes the $path to the ranking js -->
 <script type="text/javascript"> var path = "<?php echo $path; ?>"; </script>
+<script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/gamification-config.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Ranking/ranking.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Ranking/rank_progress.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Ranking/circle-progress.js"></script>

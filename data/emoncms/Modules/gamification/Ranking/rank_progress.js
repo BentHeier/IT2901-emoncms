@@ -6,7 +6,7 @@ $(document).ready( function() {
 
 
 function fetchRanks() {
-	var url = "http://178.79.153.226/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id ;
+	var url = "http://" + gamificationServerIP + "/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id ;
 	
 	$.ajax({
 		type: "GET",

@@ -54,6 +54,7 @@ foreach($decomposedPath as &$value) {
 
 <!-- Widget -->
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Widget/widget.css">
+<script type="text/javascript" src="<?php echo $path ?>Modules/gamification/gamification-config.js" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $path ?>Modules/gamification/Widget/widget.js" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Widget/circle-progress.js"></script>
 

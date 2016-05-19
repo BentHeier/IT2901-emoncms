@@ -36,7 +36,7 @@ function addAchievements() {
 		</div>
 	*/
 	
-	var url = "http://178.79.153.226/php/retrieveHouseholdAchievements.php?callback=?&household_id=" + list.data.id;
+	var url = "http://" + gamificationServerIP + "/php/retrieveHouseholdAchievements.php?callback=?&household_id=" + list.data.id;
 	
 	$.ajax({
 		type: "GET",
@@ -122,7 +122,7 @@ function refreshLeaderboard() {
 	// Dates are in the format yyyy-mm-dd
 	var endString   =   endDate.getFullYear() + "-" + ("0" + (  endDate.getMonth() + 1)).slice(-2) + "-" + ("0" +   endDate.getDate()).slice(-2);
 	var startString = startDate.getFullYear() + "-" + ("0" + (startDate.getMonth() + 1)).slice(-2) + "-" + ("0" + startDate.getDate()).slice(-2);
-	var url = "http://178.79.153.226/php/retrieveLeaderboards.php?callback=?&household_id=" + list.data.id + "&leaderboard_mode=timed&start_date=" + startString + "&end_date=" + endString;
+	var url = "http://" + gamificationServerIP + "/php/retrieveLeaderboards.php?callback=?&household_id=" + list.data.id + "&leaderboard_mode=timed&start_date=" + startString + "&end_date=" + endString;
 
 	$.ajax({
 		type: "GET",
