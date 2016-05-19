@@ -146,7 +146,8 @@ $("#join-cossmunity-button").click(function() {
     var data = {
         household_id : 100, //list.data.id,
         username     : list.data.username,
-        email_hash   : CryptoJS.MD5(list.data.gravatar).toString()
+        email_hash   : CryptoJS.MD5(list.data.gravatar).toString(),
+        location     : list.data.location
     };
     
     console.log(data);
