@@ -145,7 +145,7 @@ $("#table").bind("onSave", function(e){
 
 $("#join-cossmunity-button").click(function() {
     var data = {
-        household_id : 100, //list.data.id,
+        household_id : list.data.id,
         username     : list.data.username,
         email_hash   : CryptoJS.MD5(list.data.gravatar).toString(),
         location     : list.data.location
@@ -159,7 +159,7 @@ $("#join-cossmunity-button").click(function() {
         method: "POST",
         type: "POST",
         success: function(data) {
-            alert("Success");
+            alert("You have successfully joined CoSSMunity!");
             console.log("Success");
         },
         error: function(wtf, status, error) {
