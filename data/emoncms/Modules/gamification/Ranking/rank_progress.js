@@ -4,7 +4,7 @@ $(document).ready( function() {
 	fetchRanks()
 });
 
-
+// Fetches ranks data from the gamification server. Calls popRanks with the JSON it received.
 function fetchRanks() {
 	var url = "http://" + gamificationServerIP + "/php/retrieveHouseholdRanks.php?callback=?&household_id=" + list.data.id ;
 	
@@ -19,6 +19,7 @@ function fetchRanks() {
 	});
 }
 
+// Add the rank circles to the DOM based on the JSON passed in.
 function popRanks(ranks) {
     var rankList = ranks["ranks"];
     for (var i = -1; i < rankList.length; i++) {

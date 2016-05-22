@@ -5,6 +5,7 @@ window.addEventListener("load", function () {
 	addDailyTip();
 });
 
+// Will fetch the widget data from the gamification server, and add the data to the DOM
 function addWidget() {
 	var widget = document.getElementById("gamificationWidget");
 
@@ -30,12 +31,13 @@ function addWidget() {
 			}
 			
 			addSeparatorLine();
-			setValues3();
+			setStyle();
 			addLeaderboard();
 		}
 	});	
 }
 
+// Adds the line that separates the rank circle from the leaderboard
 function addSeparatorLine() {
 	var line = document.createElement("div");
 	line.id = "line";
@@ -51,7 +53,8 @@ function addSeparatorLine() {
 	document.getElementById("ContentContainer").appendChild(line);
 }
 
-function setValues3() {
+// Add some styling
+function setStyle() {
 	//-----------------Start of content-------------------
 	$('#ContentContainer').css('width', '100%');
 	$('#ContentContainer').css('height', '100%').css('height', '-=' + $('#TC').outerHeight() + '');
@@ -76,6 +79,7 @@ function setValues3() {
 /*   WIDGET RANK   */
 /*******************/
 
+// Adds the rank circle to the DOM
 function progressBar(decimal, rank_id) {
 
     //Using the size from previous image
@@ -115,6 +119,7 @@ function progressBar(decimal, rank_id) {
 /*   TIP OF THE DAY   */
 /**********************/
 
+// Fetches a tip from the gamification server, and adds it to the DOM
 function addDailyTip() {
 	var url = "http://" + gamificationServerIP + "/php/retrieveTip.php?callback=?&household_id=" + list.data.id;
 	

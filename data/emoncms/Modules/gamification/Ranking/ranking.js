@@ -25,6 +25,7 @@ function highlightPageLink(){
 /*   ACHIEVEMENTS   */
 /********************/
 
+// Fetches leaderboard data from the gamification server, and adds it to the DOM.
 function addAchievements() {
 	/*
 		EXAMPLE
@@ -68,6 +69,7 @@ function addAchievements() {
 /*   LEADERBOARD   */
 /*******************/
 
+// Removes the previous leaderboard from the DOM, and adds the new data from the passed in JSON to the DOM.
 function addLeaderboardData(leaderboardData) {
 	/*
 		EXAMPLE
@@ -111,6 +113,7 @@ function numberWithThousandsSeparator(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
+// Fetches new leaderboard data from the gamification server based on the currently selected time frame. It calls addLeaderboardData when it's done.
 function refreshLeaderboard() {
 	var endDate = new Date();
 	var startDate = new Date(); // This will change below
@@ -141,50 +144,50 @@ function refreshLeaderboard() {
 /*   TOOLTIPS   */
 /****************/
 
-
+// Adds hover info to the "?" buttons. This is currently dummy data, and should be replaced with something more appropriate
 function setTooltips() {
 
-        $("#leaderboardHelp").data("powertip", function(){
+    $("#leaderboardHelp").data("powertip", function(){
 
-                var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-                "<br>enough to think they can change the world, are the ones who do.";
-
-                    return tooltip;
-                });
-        $("#achievementsHelp").data("powertip", function(){
             var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-                "<br>enough to think they can change the world, are the ones who do."
+            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+            "<br>enough to think they can change the world, are the ones who do.";
 
-            return tooltip;
-        });
+                return tooltip;
+            });
+    $("#achievementsHelp").data("powertip", function(){
+        var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
+            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+            "<br>enough to think they can change the world, are the ones who do."
 
-		$("#rankHelp").data("powertip", function(){
-			var tooltip = "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-                "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-                "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-                "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-                "<br>enough to think they can change the world, are the ones who do."
-			return tooltip;
-		});
+        return tooltip;
+    });
 
-        $("#leaderboardHelp").powerTip({
-            placement: "se",
-            mouseOnToPopup:true
-        });
+	$("#rankHelp").data("powertip", function(){
+		var tooltip = "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
+            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
+            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
+            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
+            "<br>enough to think they can change the world, are the ones who do."
+		return tooltip;
+	});
 
-        $("#achievementsHelp").powerTip({
-            placement: "se",
-            mouseOnToPopup: true
-        });
+    $("#leaderboardHelp").powerTip({
+        placement: "se",
+        mouseOnToPopup:true
+    });
 
-		$("#rankHelp").powerTip({
-			placement: "se",
-			mouseOnToPopup: true
-		});
-    }
+    $("#achievementsHelp").powerTip({
+        placement: "se",
+        mouseOnToPopup: true
+    });
+
+	$("#rankHelp").powerTip({
+		placement: "se",
+		mouseOnToPopup: true
+	});
+}

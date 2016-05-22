@@ -143,6 +143,7 @@ $("#table").bind("onSave", function(e){
 // Gamification
 //------------------------------------------------------
 
+// Submits relevant data (id, username, mail hash, location) to the gamification server
 $("#join-cossmunity-button").click(function() {
     var data = {
         household_id : list.data.id,
