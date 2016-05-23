@@ -149,30 +149,21 @@ function setTooltips() {
 
     $("#leaderboardHelp").data("powertip", function(){
 
-            var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-            "<br>enough to think they can change the world, are the ones who do.";
+        var tooltip =   "The leaderboards display the current household leaders for the specific month, quarter and year. " + 
+        			"<br>Together with the rank that you have achieved over the course of joining CoSSMunity. ";
 
-                return tooltip;
-            });
+            return tooltip;
+        });
     $("#achievementsHelp").data("powertip", function(){
-        var tooltip =   "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-            "<br>enough to think they can change the world, are the ones who do."
+        var tooltip =   "Being a part of CoSSMunity earns you achievements as you perform various energy saving operations. " + 
+            		"<br>The title and description of the achievments describe what you need to accomplish to earn that achievement. ";
 
         return tooltip;
     });
 
 	$("#rankHelp").data("powertip", function(){
-		var tooltip = "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. " + 
-            "<br>The ones who see things differently. They're not fond of rules, and they have no respect for the status quo. You can quote " + 
-            "<br>them, disagree with them. Glorify, or vilify them. About the only thing you can't do is ignore them. Because they change things. " +
-            "<br>They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy " +
-            "<br>enough to think they can change the world, are the ones who do."
+		var tooltip =	"Points earned by being a part of CoSSMunity increases your rank. " + 
+            	  	"<br>Your current progress is displayed below.";
 		return tooltip;
 	});
 
