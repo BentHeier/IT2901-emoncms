@@ -3,7 +3,7 @@ global $path;
 ?>
 
 <!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/segmentedControl.css">
+<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Third-party/segmentedControl.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Lib/jqueryui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/cossmiccontrol/Views/cossmiccontrol_view.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/ranking.css">
