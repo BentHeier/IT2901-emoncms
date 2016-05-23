@@ -156,7 +156,6 @@ $("#join-cossmunity-button").click(function() {
 	
     $.ajax("http://" + gamificationServerIP + "/php/setupHousehold.php", {
         data: data,
-        dataType: "json",
         method: "POST",
         type: "POST",
         success: function(data) {
