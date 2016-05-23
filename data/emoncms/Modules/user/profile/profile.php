@@ -160,12 +160,14 @@ $("#join-cossmunity-button").click(function() {
         type: "POST",
         success: function(data) {
             alert("You have successfully joined CoSSMunity!");
-            console.log("Success");
+            console.log("Success with data", data.toString());
         },
-        error: function(wtf, status, error) {
-            console.log(wtf);
+        error: function(obj, status, error) {
+            console.log(obj);
             console.log(status);
             console.log(error);
+            
+            alert('Could not join CoSSMunity with error "' + obj.statusText + '".');
         }
     });
 })
