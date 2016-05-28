@@ -7,7 +7,6 @@ global $path;
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Lib/jqueryui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/cossmiccontrol/Views/cossmiccontrol_view.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/ranking.css">
-<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Modules/gamification/Ranking/rank_progress.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>Lib/jquerypowertip/css/jquery.powertip.css">
 
 <!-- Javascripts -->
@@ -23,7 +22,6 @@ global $path;
 <!-- Gamification -->
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/gamification-config.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Ranking/ranking.js"></script>
-<script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Ranking/rank_progress.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/gamification/Third-party/circle-progress.js"></script>
 
 <div id="rankings">
